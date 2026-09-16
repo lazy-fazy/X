@@ -2,75 +2,37 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>&nbsp;</title>
 <style>
-  :root {
-    --tlo: #12100e;
-    --tekst: #efe9e1;
-    --cien: #8d867d;
-    --ramka: #2a2622;
-  }
-  * { box-sizing: border-box; }
-  body {
+  html, body {
     margin: 0;
-    min-height: 100vh;
+    padding: 0;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+  }
+  body {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.75rem;
-    padding: 2rem 1.25rem 3rem;
-    background: var(--tlo);
-    color: var(--tekst);
-    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  }
-  figure {
-    margin: 0;
-    max-width: 900px;
-    width: 100%;
-    text-align: center;
   }
   img {
     max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: auto;
     display: block;
-    margin: 0 auto;
-    border: 1px solid var(--ramka);
-    border-radius: 2px;
+    -webkit-user-select: none;
+    user-select: none;
   }
-  figcaption {
-    margin-top: 0.9rem;
-    font-size: 1.05rem;
-    letter-spacing: 0.01em;
-  }
-  .licznik {
-    font-size: 0.9rem;
-    color: var(--przygaszony);
-  }
-  .licznik strong {
-    color: var(--tekst);
-    font-weight: 600;
-  }
-  /* wygląd gotowego widżetu GoatCounter, gdyby ktoś chciał go użyć zamiast własnego */
-  #gcstat { font-size: 0.85rem; }
 </style>
 </head>
 <body>
 
-  <figure>
-    <img src="phish.jpg">
-  </figure>
+  <img src="phish.jpg" alt="https://raw.githubusercontent.com/lazy-fazy/X/refs/heads/main/phish.jpg">
 
-  <p class="licznik">Ryba dziś: <strong id="liczba">–</strong></p>
-
-  <script>
-    fetch('https://lazy-fazy.goatcounter.com/counter/' + encodeURIComponent(location.pathname) + '.json')
-      .then(function (r) { return r.json(); })
-      .then(function (d) { document.getElementById('liczba').textContent = d.count; })
-      .catch(function () { document.querySelector('.licznik').style.display = 'none'; });
-  </script>
-
-  <!--Licznik-->
   <script data-goatcounter="https://lazy-fazy.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 
